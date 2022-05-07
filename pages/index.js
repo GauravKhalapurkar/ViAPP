@@ -41,10 +41,6 @@ export default function Home() {
     total: "-",
   });
 
-  data.academicYear = "";
-  data.year = "";
-  data.semester = "";
-
   // A state for button to display loading in case if internet is slow, else its fast enough.
   const [loading, setloading] = useState(false);
 
