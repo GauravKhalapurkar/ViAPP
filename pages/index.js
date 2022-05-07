@@ -49,7 +49,7 @@ export default function Home() {
 
   // submit the data to firebase
   const onSubmit = () => {
-    // chaeck for empty fields. rough check lol.
+    // check for empty fields. rough check lol.
     if (
       (data.academicYear !== "",
       data.year !== "",
@@ -118,8 +118,30 @@ export default function Home() {
     aEl.click();
     // remove once downloaded.
     document.body.removeChild(aEl);
-
-    //setDID("");
+    // clear data once submited.
+    setData({
+      academicYear: "",
+      year: "",
+      semester: "",
+      subject: "",
+      branch: "",
+      projectType: "",
+      projectTitle: "",
+      m1: "",
+      m2: "",
+      m3: "",
+      m4: "",
+      m5: "",
+      m6: "",
+      concept: "-",
+      presentation: "-",
+      teamWork: "-",
+      subjectKnowledge: "-",
+      questionAnswer: "-",
+      total: "-",
+    });
+    // clear code.
+    setDID("");
   };
 
   return (
