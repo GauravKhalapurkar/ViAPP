@@ -158,7 +158,7 @@ export default function Home() {
           onChange={(e) => {
             setData({ ...data, academicYear: e.target.value });
           }}
-          placeholder="E.g. 2021"
+          placeholder="E.g. 2021-22"
           size="md"
         />
         <HStack pt={"20px"}>
