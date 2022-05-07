@@ -132,7 +132,7 @@ export default function Home() {
     data.m4 = "";
     data.m5 = "";
     data.m6 = "";
-    setDID("");
+    //setDID("");
   };
 
   return (
