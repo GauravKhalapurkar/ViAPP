@@ -119,19 +119,6 @@ export default function Home() {
     // remove once downloaded.
     document.body.removeChild(aEl);
 
-    data.academicYear = "";
-    data.year = "";
-    data.semester = "";
-    data.subject = "";
-    data.branch = "";
-    data.projectType = "";
-    data.projectTitle = "";
-    data.m1 = "";
-    data.m2 = "";
-    data.m3 = "";
-    data.m4 = "";
-    data.m5 = "";
-    data.m6 = "";
     //setDID("");
   };
 
