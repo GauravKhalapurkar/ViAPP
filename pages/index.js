@@ -47,6 +47,8 @@ export default function Home() {
   // store the document id once data is added in firebase.
   const [docId, setDID] = useState("");
 
+  const [academicYearError, setAcademicYearError] = useState(false);
+
   // submit the data to firebase
   const onSubmit = () => {
     // check for empty fields. rough check lol.
@@ -57,7 +59,8 @@ export default function Home() {
       data.subject !== "",
       data.branch !== "",
       data.projectType !== "",
-      data.projectTitle !== "")
+      data.projectTitle !== "") &&
+      !academicYearError
     ) {
       // lets just check for atleast one member.
       if (data.m1 !== "") {
@@ -145,20 +148,16 @@ export default function Home() {
   };
 
   const handleAcademicYearInput = (e) => {
-    console.log(e.target.value);
     setData({ ...data, academicYear: e.target.value });
 
-    let re =
-      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    let re = /^2\d{3}-[1-9][1-9]$/;
 
     if (re.test(e.target.value)) {
-      console.log("valid");
+      setAcademicYearError(false);
     } else {
-      console.log("invalid");
+      setAcademicYearError(true);
     }
   };
-
-  ///^2\d{3}-[1-9]{2}$/
 
   return (
     <div className={styles.container}>
@@ -179,13 +178,18 @@ export default function Home() {
         <Text mb="8px">Acedmic Year</Text>
         <Input
           value={data.academicYear}
+          maxLength={7}
           onChange={(e) => {
             handleAcademicYearInput(e);
-            //setData({ ...data, academicYear: e.target.value });
           }}
-          placeholder="E.g. 2021-22"
+          placeholder="E.g. 2022-23"
           size="md"
         />
+        {academicYearError && (
+          <Text className={styles.academicYearError}>
+            Enter Academic Year in format e.g. 2022-23
+          </Text>
+        )}
         <HStack pt={"20px"}>
           <VStack alignItems={"flex-start"}>
             <Text mb="8px">Year</Text>

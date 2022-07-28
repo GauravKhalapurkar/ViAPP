@@ -66,6 +66,10 @@
   font-size: 1.5rem;
 }
 
+.academicYearError {
+  color: red;
+}
+
 .code {
   background: #fafafa;
   border-radius: 5px;
