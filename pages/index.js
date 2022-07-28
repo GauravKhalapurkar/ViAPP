@@ -38,7 +38,7 @@ export default function Home() {
     teamWork: "-",
     subjectKnowledge: "-",
     questionAnswer: "-",
-    total: "-",
+    total: "0",
   });
 
   // A state for button to display loading in case if internet is slow, else its fast enough.
