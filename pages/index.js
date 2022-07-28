@@ -51,15 +51,15 @@ export default function Home() {
 
   // submit the data to firebase
   const onSubmit = () => {
-    // check for empty fields. rough check lol.
+    // check for empty fields. rough check.
     if (
-      (data.academicYear !== "",
-      data.year !== "",
-      data.semester !== "",
-      data.subject !== "",
-      data.branch !== "",
-      data.projectType !== "",
-      data.projectTitle !== "") &&
+      data.academicYear !== "" &&
+      data.year !== "" &&
+      data.semester !== "" &&
+      data.subject !== "" &&
+      data.branch !== "" &&
+      data.projectType !== "" &&
+      data.projectTitle !== "" &&
       !academicYearError
     ) {
       // lets just check for atleast one member.
@@ -82,7 +82,7 @@ export default function Home() {
             console.log(err);
           });
       } else {
-        alert("Atleast one member required");
+        alert("At least one member required");
       }
     } else {
       alert("Please fill all the fields");
@@ -195,6 +195,7 @@ export default function Home() {
             <Text mb="8px">Year</Text>
             <Select
               placeholder="---Select option---"
+              value={data.year}
               onChange={(e) => {
                 setData({ ...data, year: e.target.value });
               }}
@@ -209,6 +210,7 @@ export default function Home() {
             <Text mb="8px">Semester</Text>
             <Select
               placeholder="---Select option---"
+              value={data.semester}
               onChange={(e) => {
                 setData({ ...data, semester: e.target.value });
               }}
@@ -240,6 +242,7 @@ export default function Home() {
             <Text mb="8px">Branch</Text>
             <Select
               placeholder="---Select option---"
+              value={data.branch}
               onChange={(e) => {
                 setData({ ...data, branch: e.target.value });
               }}
@@ -256,6 +259,7 @@ export default function Home() {
         <Text mb="8px">Project Type</Text>
         <Select
           placeholder="---Select option---"
+          value={data.projectType}
           onChange={(e) => {
             setData({ ...data, projectType: e.target.value });
           }}
