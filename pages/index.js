@@ -146,6 +146,16 @@ export default function Home() {
 
   const handleAcademicYearInput = (e) => {
     console.log(e.target.value);
+    setData({ ...data, academicYear: e.target.value });
+
+    let re =
+      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    if (re.test(e.target.value)) {
+      console.log("valid");
+    } else {
+      console.log("invalid");
+    }
   };
 
   ///^2\d{3}-[1-9]{2}$/
