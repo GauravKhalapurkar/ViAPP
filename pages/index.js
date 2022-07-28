@@ -144,6 +144,12 @@ export default function Home() {
     setDID("");
   };
 
+  const handleAcademicYearInput = (e) => {
+    console.log(e.target.value);
+  };
+
+  ///^2\d{3}-[1-9]{2}$/
+
   return (
     <div className={styles.container}>
       <Head>
@@ -164,7 +170,8 @@ export default function Home() {
         <Input
           value={data.academicYear}
           onChange={(e) => {
-            setData({ ...data, academicYear: e.target.value });
+            handleAcademicYearInput(e);
+            //setData({ ...data, academicYear: e.target.value });
           }}
           placeholder="E.g. 2021-22"
           size="md"
