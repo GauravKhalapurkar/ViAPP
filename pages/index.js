@@ -150,7 +150,7 @@ export default function Home() {
   const handleAcademicYearInput = (e) => {
     setData({ ...data, academicYear: e.target.value });
 
-    let re = /^2\d{3}-[1-9][1-9]$/;
+    let re = /^2\d{3}-[0-9][0-9]$/;
 
     if (re.test(e.target.value)) {
       setAcademicYearError(false);
